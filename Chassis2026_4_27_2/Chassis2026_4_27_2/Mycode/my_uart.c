@@ -46,7 +46,7 @@ void YAW_Receive_IDLE(void)
 {
 	
 	HAL_UART_DMAStop(&huart1);																					//关闭DMA
-  YAW_data_length  = BUFLENGTH - __HAL_DMA_GET_COUNTER(&hdma_usart1_rx);  //128-剩余空间 得到已经接收的数量
+	YAW_data_length  = BUFLENGTH - __HAL_DMA_GET_COUNTER(&hdma_usart1_rx);  //128-剩余空间 得到已经接收的数量
 	if( YAW_data_length == 22 )
 	{
 			memcpy(&yaw_rx_buf[0],yaw_rx_buffer,22);	
